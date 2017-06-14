@@ -1,0 +1,49 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://chuchen.cloud.mysql.com:3306/cloud_fastdfs?characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+  jpa:
+    database: MYSQL
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+      dialect: org.hibernate.dialect.MySQL5Dialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+  http:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  jmx:
+    enabled: false
+
+server:
+  port: 9111
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server-peer1:9101/eureka/,http://eureka-server-peer2:9102/eureka/,http://eureka-server-peer3:9103/eureka/
+  instance:
+    status-page-url: http://fastdfs-server:${server.port}/swagger-ui.html # ${server.port}为该服务的端口号
+
+fdfs:
+  so-Timeout: 1501
+  connectTimeout: 601
+  thumbImage:
+    width: 30
+    height: 30
+  trackerList:
+     - fastdfs-server:22122
+  pool:
+    #从池中借出的对象的最大数目
+    maxTotal: 153
+    #获取连接时的最大等待毫秒数100
+    maxWaitMillis: 102
+
+logging:
+  config: classpath:logback.xml

@@ -1,0 +1,17 @@
+version: "2"
+services:
+  eureka-peer1:
+    image: chuchen/eureka
+    network_mode: "host"
+    environment:
+      spring.profiles.active: peer1
+  eureka-peer2:
+    image: chuchen/eureka
+    network_mode: "host"
+    environment:
+      spring.profiles.active: peer2
+  eureka-peer3:
+    image: chuchen/eureka
+    network_mode: "host"
+    environment:
+      spring.profiles.active: peer3
