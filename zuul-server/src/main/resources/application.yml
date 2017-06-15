@@ -1,14 +1,39 @@
-server:
-  port: 9401
+
 eureka:
   client:
     serviceUrl:
       defaultZone: http://eureka-server-peer1:9101/eureka/,http://eureka-server-peer2:9102/eureka/,http://eureka-server-peer3:9103/eureka/
 zuul:
   routes:
-    api-a:
-      path: /api-a/**
-      serviceId: discovery-service
+    dfs-service:
+      path: /dfs/**
+      serviceId: dfs-service
+    auth-service:
+      path: /auth/**
+      serviceId: auth-service
 
 logging:
   config: classpath:logback.xml
+
+
+security:
+  # 安全起见，应该启用csrf保护。因为前端使用的是angularjs，所有需要在WebSecurityConfigurer.configure方法(即OnlineStoreApplication.configure方法)里面配置CookieCsrfTokenRepository
+  #  enable-csrf: false
+  oauth2:
+    resource:
+        # to complete the authentication it needs to know where the user info endpoint is in user-service
+      userInfoUri: http://localhost:8181/auth/user
+      # the filter also needs to know about the client registration with user-service
+    client:
+      clientId: timeyang
+      clientSecret: timeyangsecret
+      accessTokenUri: http://localhost:8181/auth/oauth/token
+      userAuthorizationUri: http://localhost:8181/auth/oauth/authorize
+  # 忽略的资源在WebSecurityConfigurer.configure方法里面配置，即OnlineStoreApplication.configure方法。因为在这里配置不够灵活
+  #  ignored: /assets/**
+
+  # 提高延时设置 elevate timeout settings, 避免因为延时造成失败
+hystrix:command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000

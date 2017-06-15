@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/dfs-server/dfs-server.iml" filepath="$PROJECT_DIR$/dfs-server/dfs-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/first-micro-service.iml" filepath="$PROJECT_DIR$/first-micro-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hystrix-server/hystrix-server.iml" filepath="$PROJECT_DIR$/hystrix-server/hystrix-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/zuul-server/zuul-server.iml" filepath="$PROJECT_DIR$/zuul-server/zuul-server.iml" />
     </modules>
   </component>

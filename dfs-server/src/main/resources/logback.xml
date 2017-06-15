@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <property name="APP_NAME" value="fast-dfs"/>
+    <property name="APP_NAME" value="dfs-server"/>
     <property name="LOG_HOME" value="${user.home}/logs/logs-${APP_NAME}"/>
     <property name="LOG_PREFIX" value="${APP_NAME}"/>
     <property name="LOG_ROOT_LEVEL" value="INFO"/>

@@ -11,6 +11,7 @@
         <module name="config-server" />
         <module name="dfs-server" />
         <module name="eureka-server" />
+        <module name="hystrix-server" />
         <module name="zuul-server" />
       </profile>
     </annotationProcessing>
@@ -21,6 +22,7 @@
       <module name="dfs-server" target="1.8" />
       <module name="eureka-server" target="1.8" />
       <module name="first-micro-service" target="1.8" />
+      <module name="hystrix-server" target="1.8" />
       <module name="zuul-server" target="1.8" />
     </bytecodeTargetLevel>
   </component>
