@@ -31,13 +31,17 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <docker.image.prefix>timeyang</docker.image.prefix>
+        <docker.image.prefix>ChuChen</docker.image.prefix>
         <docker.plugin.version>0.3.258</docker.plugin.version>
     </properties>
 
 
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>

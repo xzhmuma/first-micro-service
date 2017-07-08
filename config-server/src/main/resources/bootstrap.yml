@@ -2,9 +2,10 @@
 spring:
   application:
     name: config-service
+  profiles:
+    active: native
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/xzhmuma/first-micro-service.git
-          searchPaths: config-repository
+        native:
+          search-locations: classpath:config
