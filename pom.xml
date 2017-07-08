@@ -25,6 +25,7 @@
         <module>config-server</module>
         <module>auth-server</module>
         <module>hystrix-server</module>
+        <module>user-server</module>
     </modules>
 
     <properties>

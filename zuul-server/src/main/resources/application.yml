@@ -1,9 +1,9 @@
-
+server:
+  port: 9121
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://eureka-server-peer1:9101/eureka/,http://eureka-server-peer2:9102/eureka/,http://eureka-server-peer3:9103/eureka/
-zuul:
+      defaultZone: http://localhost:9101/eureka/
   routes:
     dfs-service:
       path: /dfs/**

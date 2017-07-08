@@ -1,0 +1,31 @@
+
+spring:
+  datasource:
+    url: jdbc:mysql://chuchen.cloud.mysql.com:3306/cloud_user?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    database: MYSQL
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+      dialect: org.hibernate.dialect.MySQL5Dialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+  redis:
+      host: chuchen.cloud.redis.com
+      port: 6379
+server:
+  port: 8181
+  # The context path has to be explicit if you are running both the client and the auth server on localhost, otherwise the cookie paths clash and the two apps cannot agree on a session identifier.
+  contextPath: /auth
+security:
+  user:
+    password: password
+  enable-csrf: false
+  ignored: /assets/**
+logging.level.org.springframework.security: DEBUG
+

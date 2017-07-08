@@ -4,3 +4,10 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:9101/eureka/
+
+#spring:
+#  cloud:
+#    config:
+#      discovery:
+#        enabled: true
+#        service-id: config-service
