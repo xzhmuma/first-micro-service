@@ -1,14 +1,6 @@
 spring:
   application:
     name: eureka-service
-  cloud:
-    config:
-      enabled: true
-      discovery:
-        enabled:  true
-        service-id: config-service
-      profile: dev
-      label: master
 security:
   basic:
     enabled: true

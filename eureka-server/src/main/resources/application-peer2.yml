@@ -1,0 +1,13 @@
+server:
+  port: 9102
+eureka:
+  instance:
+    hostname: eureka-server-peer2
+    lease-renewal-interval-in-seconds: 5      # 心跳时间，即服务续约间隔时间（缺省为30s）
+    lease-expiration-duration-in-seconds: 10  # 发呆时间，即服务续约到期时间（缺省为90s）
+  client:
+    serviceUrl:
+      defaultZone : http://${security.user.name}:${security.user.password}@eureka-server-peer1:9101/eureka/,http://${security.user.name}:${security.user.password}@eureka-server-peer3:9103/eureka/
+  server:
+    enable-self-preservation: false           # 关闭自我保护模式（缺省为打开）
+    eviction-interval-timer-in-ms: 5000       # 续期时间，即扫描失效服务的间隔时间（缺省为60*1000ms）
