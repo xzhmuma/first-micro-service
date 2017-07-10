@@ -8,10 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="auth-server" />
         <module name="commons" />
-        <module name="config-server" />
         <module name="dfs-server" />
         <module name="eureka-server" />
-        <module name="hystrix-server" />
         <module name="user-server" />
         <module name="zuul-server" />
       </profile>

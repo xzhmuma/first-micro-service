@@ -1,8 +1,0 @@
-server:
-  port: 9141
-
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:9101/eureka/
